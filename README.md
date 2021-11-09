@@ -1,6 +1,6 @@
 # etcd_sd
 etcd sd for prometheus，consul_sd_configs，file_sd_configs
-> prometheus不支持etcd自动服务发现，因此写了这个脚本借道file_sd_configs实现基于tcd的自动服务发现
+> prometheus不支持etcd自动服务发现，因此写了这个脚本借道file_sd_configs实现基于etcd v3的自动服务发现
 
 ```
 ./etcd_sd -target-file /home/xiewj/container/iotmicro/monitor/prometheus/tgroups.json
