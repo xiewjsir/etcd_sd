@@ -50,7 +50,7 @@ func main() {
 	var (
 		err         error
 		path        = "/micro/registry"
-		keyPattern  = "meterics"
+		keyPattern  = "-web"
 		targetFile  = flag.String("target-file", "tgroups.json", "the file that contains the target groups")
 		dialTimeout = 5 * time.Second
 		endpoints   = []string{"localhost:2379"}
@@ -147,6 +147,7 @@ func (s services) persist(targetFile *string) error {
 	)
 	
 	for name, service := range s {
+		targets = make([]string,0,len(service))
 		for _, node := range service {
 			targets = append(targets, node)
 		}
